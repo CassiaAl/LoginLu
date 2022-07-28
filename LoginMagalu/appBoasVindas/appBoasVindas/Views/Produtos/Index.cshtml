@@ -1,0 +1,50 @@
+﻿@model IEnumerable<appBoasVindas.Models.Produto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<p>
+    <button  class="btn btn-outline-primary"><a asp-action="Create">Adicionar Produto</a></button>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Id)
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+               <button  class="btn btn-outline-primary"><a asp-action="Edit" asp-route-id="@item.Id">Editar</a></button> 
+               <button  class="btn btn-outline-danger"><a asp-action="Delete" asp-route-id="@item.Id">Excluir</a></button> 
+            </td>
+        </tr>
+
+       
+}
+    </tbody>
+</table>
+
+ <!-- <button  class="btn btn-outline-primary"><a asp-action="Home">Voltar</a></button>-->

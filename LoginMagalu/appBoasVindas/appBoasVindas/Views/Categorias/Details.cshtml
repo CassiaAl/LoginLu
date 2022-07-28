@@ -1,0 +1,24 @@
+﻿@model appBoasVindas.Models.Categoria
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div>
+    <h4>Alterar Categoria</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+     <br /><br /><br />
+    <button  class="btn btn-outline-primary"><a asp-action="Index">Voltar</a></button>
+</div>
